@@ -54,6 +54,9 @@ namespace Task4_ProcessingTextRecords
 
         private void Task4Button_Click(object sender, EventArgs e)
         {
+            Task4SingleMatchResultLabel.Text = "";
+            Task4MultipleMatchResultsLabel.Text = "";
+
             var text = Task4Input.Text;
 
             var firstMatch = StringProcessor.Task3ProcessSingleMatch(text);
