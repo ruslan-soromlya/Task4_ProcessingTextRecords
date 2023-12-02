@@ -51,5 +51,18 @@ namespace Task4_ProcessingTextRecords
                 lb.Items.Add(word);
             }
         }
+
+        private void Task4Button_Click(object sender, EventArgs e)
+        {
+            var text = Task4Input.Text;
+
+            var firstMatch = StringProcessor.Task3ProcessSingleMatch(text);
+            Task4SingleMatchResultLabel.Text = firstMatch;
+
+            var allMatches = StringProcessor.Task3ProcessMultipleMatches(text);
+            Task4MultipleMatchResultsLabel.Text = String.Join(", ", allMatches);
+
+            
+        }
     }
 }

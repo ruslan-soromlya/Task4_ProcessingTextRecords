@@ -52,7 +52,13 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Task4Input = new System.Windows.Forms.TextBox();
+            this.Task4Button = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.Task4SingleMatchResultLabel = new System.Windows.Forms.Label();
+            this.Task4MultipleMatchResultsLabel = new System.Windows.Forms.Label();
             this.mainTabPanel.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -61,6 +67,7 @@
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainTabPanel
@@ -345,6 +352,12 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.Task4MultipleMatchResultsLabel);
+            this.tabPage2.Controls.Add(this.Task4SingleMatchResultLabel);
+            this.tabPage2.Controls.Add(this.Task4Input);
+            this.tabPage2.Controls.Add(this.Task4Button);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -352,6 +365,45 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "RegEx";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // Task4Input
+            // 
+            this.Task4Input.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Task4Input.Location = new System.Drawing.Point(160, 65);
+            this.Task4Input.Margin = new System.Windows.Forms.Padding(40, 3, 40, 3);
+            this.Task4Input.Multiline = true;
+            this.Task4Input.Name = "Task4Input";
+            this.Task4Input.PlaceholderText = "Введіть текст";
+            this.Task4Input.Size = new System.Drawing.Size(199, 91);
+            this.Task4Input.TabIndex = 3;
+            // 
+            // Task4Button
+            // 
+            this.Task4Button.Location = new System.Drawing.Point(381, 390);
+            this.Task4Button.Name = "Task4Button";
+            this.Task4Button.Size = new System.Drawing.Size(75, 23);
+            this.Task4Button.TabIndex = 2;
+            this.Task4Button.Text = "Result";
+            this.Task4Button.UseVisualStyleBackColor = true;
+            this.Task4Button.Click += new System.EventHandler(this.Task4Button_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(160, 248);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(216, 15);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Result of working with MatchCollection";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(160, 206);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(162, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Result of working with Match";
             // 
             // tableLayoutPanel1
             // 
@@ -364,6 +416,22 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 100);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // Task4SingleMatchResultLabel
+            // 
+            this.Task4SingleMatchResultLabel.AutoSize = true;
+            this.Task4SingleMatchResultLabel.Location = new System.Drawing.Point(418, 206);
+            this.Task4SingleMatchResultLabel.Name = "Task4SingleMatchResultLabel";
+            this.Task4SingleMatchResultLabel.Size = new System.Drawing.Size(0, 15);
+            this.Task4SingleMatchResultLabel.TabIndex = 4;
+            // 
+            // Task4MultipleMatchResultsLabel
+            // 
+            this.Task4MultipleMatchResultsLabel.AutoSize = true;
+            this.Task4MultipleMatchResultsLabel.Location = new System.Drawing.Point(418, 248);
+            this.Task4MultipleMatchResultsLabel.Name = "Task4MultipleMatchResultsLabel";
+            this.Task4MultipleMatchResultsLabel.Size = new System.Drawing.Size(0, 15);
+            this.Task4MultipleMatchResultsLabel.TabIndex = 5;
             // 
             // MainForm
             // 
@@ -385,6 +453,8 @@
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -416,5 +486,11 @@
         private Label vowelCountLabel;
         private Label label4;
         private TextBox Task3TextInput;
+        private Label label5;
+        private Label label2;
+        private TextBox Task4Input;
+        private Button Task4Button;
+        private Label Task4MultipleMatchResultsLabel;
+        private Label Task4SingleMatchResultLabel;
     }
 }

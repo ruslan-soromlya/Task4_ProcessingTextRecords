@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Task4_ProcessingTextRecords.Logic
@@ -14,6 +15,8 @@ namespace Task4_ProcessingTextRecords.Logic
         private static readonly char[] _consonantsCharsToSearch = { 'р', 'з', 'с' };
 
         private static readonly string _lettersThatEndsByPattern = "ти";
+
+        private static readonly string _regExSearchPattern = @"swi.(l?fg+)[an]{1,5}\^";
 
 
         public static IEnumerable<string> Task1Process(string s)
@@ -33,6 +36,18 @@ namespace Task4_ProcessingTextRecords.Logic
         public static IEnumerable<string> Task3Process(string s)
         {
             return s.ToWords().Where(x => x.ToLowerInvariant().EndsWith(_lettersThatEndsByPattern));
+        }
+
+        public static string Task3ProcessSingleMatch(string s)
+        {
+            var matches = Task3ProcessMultipleMatches(s);
+            return matches.Any() ? matches.First() : string.Empty;
+        }
+
+        public static IEnumerable<string> Task3ProcessMultipleMatches(string s)
+        {
+            MatchCollection mc = Regex.Matches(s, _regExSearchPattern);
+            return mc.Select(x => x.Value);
         }
 
         private static int CountCharsInString(string s, char[] charsToCount)
